@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 10px 15px;
+      background-color: #eee;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+    nav ul li a:hover {
+      background-color: #ddd;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    #main-title {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="main-title">Welcome to Bank API</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="/register" class="nav-link">Register</a></li>
+      <li><a href="/login" class="nav-link">Login</a></li>
+      <li><a href="/accounts" class="nav-link">Accounts</a></li>
+      <li><a href="/transactions" class="nav-link">Transactions</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <p>&copy; 2024 Bank API</p>
+  </footer>
+
+  <script>
+    // Fade-in animacija za naslov
+    document.addEventListener('DOMContentLoaded', () => {
+      const title = document.getElementById('main-title');
+      title.style.opacity = 0;
+      title.style.transform = 'translateY(-30px)';
+      setTimeout(() => {
+        title.style.transition = 'opacity 1.5s, transform 1.5s';
+        title.style.opacity = 1;
+        title.style.transform = 'translateY(0)';
+      }, 300);
+    });
+
+    // Hover animacija za linkove
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('mouseover', () => {
+        link.style.transform = 'scale(1.1)';
+        link.style.transition = 'transform 0.2s ease-in-out';
+      });
+
+      link.addEventListener('mouseout', () => {
+        link.style.transform = 'scale(1)';
+      });
+    });
+
+    // Slide-in animacija za linkove
+    const navLinks = document.getElementById('nav-links');
+    navLinks.style.opacity = 0;
+    navLinks.style.transform = 'translateY(20px)';
+    setTimeout(() => {
+      navLinks.style.transition = 'opacity 1.5s, transform 1.5s';
+      navLinks.style.opacity = 1;
+      navLinks.style.transform = 'translateY(0)';
+    }, 600);
+  </script>
+</body>
+</html>
